@@ -168,6 +168,7 @@ MongoClient.connect(connectionString, {
             res.status(200).render('about')
         })
 
+
         router.get('/reviews', checkToken, function(req, res) {
             const { role } = req.user
 
@@ -221,6 +222,9 @@ MongoClient.connect(connectionString, {
             return res.redirect('appointments-records')
 
         })
+          router.get('/edit_details', async function(req, res) {
+       res.status(200).render('edit_details')
+   })
 
         router.get('/appointments-records', checkToken, function(req, res) {
             const { role } = req.user
@@ -268,18 +272,17 @@ function sendConfirmationEmail(name, email, ref, date, total_days) {
     })
 
     transport.sendMail({
-      from: 'MedicalAdmi@hotmail.com',
-      to: email,
-      subject: 'Confirmation of booking flight insurancet',
-      html: `<h1>
+        from: 'MedicalAdmi@hotmail.com',
+        to: email,
+        subject: 'Confirmation of booking flight insurancet',
+        html: `<h1>
 t Confirmation</h1>
           <h2>Hello ${name}</h2>
-
           The insurance will take effect on: ${date} for ${total_days} days <br/>
           Reference number: ${ref}</p> <br/>
           </div>`,
     }).catch(err => console.log(err))
-  }
+}
 
 
 

@@ -63,13 +63,15 @@
                             <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="My Appointments"/>
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="My Appointments"/><br><br>
+                <li ><a class="profile-edit-btn" href="/edit_details">Edit details</a></li>
+
+
             </div>
         </div>
         <div class="row">
@@ -92,10 +94,16 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Email</label>
+                                        <label>Email</label><br><br>
+                                        <label>Role</label><br><br>
+                                        <label>User name</label>
+
                                     </div>
                                     <div class="col-md-6">
-                                        <p><%= user_sess.email %></p>
+                                        <p><%= user_sess.email %></p><br>
+                                        <p><%= user_sess.role %></p><br>
+                                        <p><%= user_sess.user_name %></p>
+
                                     </div>
                                 </div>
                                 <div class="row">
